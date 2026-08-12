@@ -9,36 +9,38 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i1557")
 
 [node name="slide" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 830.0
-offset_top = 325.0
-offset_right = 1103.0
-offset_bottom = 341.0
+offset_left = 277.318
+offset_top = -28.3612
+offset_right = 550.318
+offset_bottom = -12.3612
 min_value = 12.0
 max_value = 25.0
 value = 12.0
 
 [node name="slide2" type="HSlider" parent="."]
 layout_mode = 0
-offset_left = 827.0
-offset_top = 351.0
-offset_right = 1100.0
-offset_bottom = 367.0
+offset_left = 274.318
+offset_top = -2.36121
+offset_right = 547.318
+offset_bottom = 13.6388
 
 [node name="healthbar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 1010.0
-offset_top = 511.0
-offset_right = 1237.0
-offset_bottom = 738.0
+offset_left = 457.318
+offset_top = 157.639
+offset_right = 684.318
+offset_bottom = 384.639
 scale = Vector2(0.555, 0.555)
 fill_mode = 3
 texture_under = ExtResource("2_oew83")
@@ -46,10 +48,10 @@ texture_progress = ExtResource("3_tcujy")
 
 [node name="foodbar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 912.0
-offset_top = 843.0
-offset_right = 1214.0
-offset_bottom = 1145.0
+offset_left = 359.318
+offset_top = 489.639
+offset_right = 661.318
+offset_bottom = 791.639
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 value = 12.0
@@ -59,10 +61,10 @@ texture_progress = ExtResource("5_m7qch")
 
 [node name="energybar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 1132.0
-offset_top = 949.0
-offset_right = 1434.0
-offset_bottom = 1251.0
+offset_left = 579.318
+offset_top = 595.639
+offset_right = 881.318
+offset_bottom = 897.639
 rotation = -2.35619
 scale = Vector2(1.5, 1.5)
 value = 12.0

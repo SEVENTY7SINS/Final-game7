@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var limit = 1
+@onready var Player = $Player
 const zomo = 1
 
 
@@ -11,19 +12,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed("Up") and Player.position.y >= position.y:
 		position.y -= 10 * limit
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed("Down") and Player.position.y <= position.y:
 		position.y += 10  * limit
-	if Input.is_action_pressed("Right"):
+	if Input.is_action_pressed("Right") and Player.position.x >= position.x:
 		position.x += 10 * limit
-	if Input.is_action_pressed("Left"):
+	if Input.is_action_pressed("Left") and Player.position.x <= position.x:
 		position.x -= 10  * limit
 	if Input.is_action_pressed("Shift"):
 		limit = 10
 	if !Input.is_action_pressed("Shift"):
 		limit = 1
-	else:
-		pass
-	position.x = clamp(position.x, -100, 100)
-	position.y = clamp(position.y, -100, 100)
+	position.x = clamp(position.x, 550, 6000)
+	position.y = clamp(position.y, 300, 3850)

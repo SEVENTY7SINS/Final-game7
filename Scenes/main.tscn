@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ikw5u"]
 [ext_resource type="PackedScene" uid="uid://ck2atlnutbpoe" path="res://Scenes/UI.tscn" id="2_g14pn"]
 [ext_resource type="PackedScene" uid="uid://bmipco812hasf" path="res://Scenes/Map.tscn" id="2_jkjxm"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="3_2xm0i"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="3_1mvih"]
 [ext_resource type="PackedScene" uid="uid://bke3m7hs2w8sa" path="res://Scenes/Player.tscn" id="3_yk6qs"]
 
 [node name="Main" type="Node2D"]
@@ -12,12 +12,13 @@ script = ExtResource("1_ikw5u")
 [node name="Map" parent="." instance=ExtResource("2_jkjxm")]
 position = Vector2(0, -2)
 
-[node name="Player" parent="." instance=ExtResource("3_yk6qs")]
-position = Vector2(420, 36)
-script = ExtResource("3_2xm0i")
+[node name="Playmove" type="Node2D" parent="."]
+position = Vector2(4485, 3594)
+script = ExtResource("3_1mvih")
 
-[node name="Camera" type="Camera2D" parent="Player"]
-position = Vector2(2206, 1516)
+[node name="Player" parent="Playmove" instance=ExtResource("3_yk6qs")]
+
+[node name="Camera" type="Camera2D" parent="Playmove"]
 process_callback = 0
 
-[node name="Control" parent="Player/Camera" instance=ExtResource("2_g14pn")]
+[node name="Control" parent="Playmove/Camera" instance=ExtResource("2_g14pn")]

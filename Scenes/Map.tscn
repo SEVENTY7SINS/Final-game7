@@ -1354,6 +1354,6 @@ tile_set = SubResource("TileSet_2uqw1")
 format = 2
 
 [node name="Portal" type="Sprite2D" parent="."]
-position = Vector2(5506, 3069)
+position = Vector2(5836, 3437)
 scale = Vector2(10.3437, 10.3437)
 texture = ExtResource("3_euapf")

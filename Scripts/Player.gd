@@ -1,7 +1,7 @@
-extends Node2D
+extends CharacterBody2D
 
-@onready var limit = 1
 const zomo = 1
+@export var speed = 300
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,20 +10,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("Up"):
-		position.y -= 10 * limit
-	if Input.is_action_pressed("Down"):
-		position.y += 10  * limit
-	if Input.is_action_pressed("Right"):
-		position.x += 10 * limit
-	if Input.is_action_pressed("Left"):
-		position.x -= 10  * limit
-	if Input.is_action_pressed("Shift"):
-		limit = 10
-	if !Input.is_action_pressed("Shift"):
-		limit = 1
-	else:
-		pass
+func _physics_process(delta):
+	var direction = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = direction * speed
 	position.x = clamp(position.x, -100, 100)
 	position.y = clamp(position.y, -100, 100)
+	move_and_slide()

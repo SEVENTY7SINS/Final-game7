@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$healthbar.value = $slide2.value
-	$foodbar.value = $slide.value
-	$energybar.value = $slide.value
+	$healthbar.value = (($slide.value)/4)+($healthbar.max_value * 3/4)
+	$foodbar.value = (($slide.value)/4)+($healthbar.max_value * 3/4)
+	$energybar.value = (($slide.value)/4)+($healthbar.max_value * 3/4)
+	$Money.text = str("  Money: $") + str($slide.value * $slide.value * $slide.value)
+	$Time.value = $slide.value

@@ -1,13 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck2atlnutbpoe"]
+[gd_scene format=3 uid="uid://ck2atlnutbpoe"]
 
-[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_i1557"]
-[ext_resource type="Texture2D" uid="uid://cw4ih3r1dnmx3" path="res://Imports/healthe.png" id="2_oew83"]
-[ext_resource type="Texture2D" uid="uid://cmdl6gfk60y81" path="res://Imports/healthf.png" id="3_tcujy"]
-[ext_resource type="Texture2D" uid="uid://bde6elpuhlog7" path="res://Imports/bare.png" id="4_ma4qa"]
-[ext_resource type="Texture2D" uid="uid://dpyyhwr3bbsi5" path="res://Imports/barf.png" id="5_m7qch"]
-[ext_resource type="Texture2D" uid="uid://dmdokfinefifj" path="res://Imports/baren.png" id="5_n7cc5"]
+[ext_resource type="Script" uid="uid://bjtrtptagi20q" path="res://Scripts/ui.gd" id="1_i1557"]
+[ext_resource type="Texture2D" uid="uid://cjeiaksfrqwyt" path="res://Imports/Baremh.png" id="2_48q88"]
+[ext_resource type="Texture2D" uid="uid://cobvkq6ext4dr" path="res://Imports/Bareh.png" id="4_48q88"]
+[ext_resource type="Texture2D" uid="uid://dxr36b717pfdb" path="res://Imports/Bare.png" id="4_qwshj"]
+[ext_resource type="Texture2D" uid="uid://6sbe5rns4bll" path="res://Imports/Baref.png" id="5_48q88"]
+[ext_resource type="Texture2D" uid="uid://s8dv5d2664dd" path="res://Imports/Baren.png" id="6_48q88"]
+[ext_resource type="Texture2D" uid="uid://vqbl2huq2jox" path="res://Imports/Timebar.png" id="7_mg6lk"]
+[ext_resource type="Texture2D" uid="uid://clvqb3lqakeow" path="res://Imports/Timebarf.png" id="8_wunin"]
 
-[node name="Control" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_48q88"]
+font_size = 25
+font_color = Color(0, 1.8408597, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(1, 0.9764706, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_l4cvj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg6lk"]
+font_size = 50
+font_color = Color(0.012617188, 0, 0, 0)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=401027565]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,56 +35,84 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i1557")
 
-[node name="slide" type="HSlider" parent="."]
+[node name="slide" type="HSlider" parent="." unique_id=410868617]
 layout_mode = 0
-offset_left = 277.318
-offset_top = -28.3612
-offset_right = 550.318
-offset_bottom = -12.3612
-min_value = 12.0
-max_value = 25.0
-value = 12.0
+offset_left = -203.0
+offset_top = 193.0
+offset_right = 70.0
+offset_bottom = 209.0
 
-[node name="slide2" type="HSlider" parent="."]
+[node name="healthbar" type="TextureProgressBar" parent="." unique_id=1280954205]
 layout_mode = 0
-offset_left = 274.318
-offset_top = -2.36121
-offset_right = 547.318
-offset_bottom = 13.6388
-
-[node name="healthbar" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 457.318
-offset_top = 157.639
-offset_right = 684.318
-offset_bottom = 384.639
-scale = Vector2(0.555, 0.555)
-fill_mode = 3
-texture_under = ExtResource("2_oew83")
-texture_progress = ExtResource("3_tcujy")
-
-[node name="foodbar" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 359.318
-offset_top = 489.639
-offset_right = 661.318
-offset_bottom = 791.639
-rotation = -1.5708
-scale = Vector2(1.5, 1.5)
-value = 12.0
+offset_left = 430.0
+offset_top = 130.0
+offset_right = 808.0
+offset_bottom = 508.0
+scale = Vector2(0.865, 0.865)
+value = 100.0
 fill_mode = 4
-texture_under = ExtResource("4_ma4qa")
-texture_progress = ExtResource("5_m7qch")
+texture_under = ExtResource("2_48q88")
+texture_progress = ExtResource("4_48q88")
 
-[node name="energybar" type="TextureProgressBar" parent="."]
+[node name="foodbar" type="TextureProgressBar" parent="." unique_id=1546377458]
 layout_mode = 0
-offset_left = 579.318
-offset_top = 595.639
-offset_right = 881.318
-offset_bottom = 897.639
-rotation = -2.35619
-scale = Vector2(1.5, 1.5)
-value = 12.0
+offset_left = 383.0
+offset_top = 84.0
+offset_right = 721.0
+offset_bottom = 422.0
+rotation = -6.2831855
+scale = Vector2(1.245, 1.245)
+value = 100.0
 fill_mode = 4
-texture_under = ExtResource("4_ma4qa")
-texture_progress = ExtResource("5_n7cc5")
+texture_under = ExtResource("4_qwshj")
+texture_progress = ExtResource("5_48q88")
+tint_under = Color(1, 1, 0, 1)
+
+[node name="energybar" type="TextureProgressBar" parent="." unique_id=453695260]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 26.0
+offset_right = 660.0001
+offset_bottom = 364.0
+scale = Vector2(1.6, 1.6)
+value = 100.0
+fill_mode = 4
+texture_under = ExtResource("4_qwshj")
+texture_progress = ExtResource("6_48q88")
+
+[node name="Money" type="Label" parent="." unique_id=154267224]
+layout_mode = 0
+offset_left = -577.0
+offset_top = -286.0
+offset_right = -184.0
+offset_bottom = -236.0
+text = "  Money: 0"
+label_settings = SubResource("LabelSettings_48q88")
+
+[node name="Background" type="MeshInstance2D" parent="Money" unique_id=15292962]
+modulate = Color(1, 1, 1, 0.57254905)
+show_behind_parent = true
+position = Vector2(196.50002, 18.75)
+scale = Vector2(393.00003, 38.5)
+mesh = SubResource("QuadMesh_l4cvj")
+
+[node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
+layout_mode = 0
+offset_left = -373.0
+offset_top = 240.0
+offset_right = 421.0
+offset_bottom = 307.0
+scale = Vector2(0.865, 0.645)
+texture_under = ExtResource("7_mg6lk")
+texture_progress = ExtResource("8_wunin")
+
+[node name="Title" type="Label" parent="Time" unique_id=1793391441]
+layout_mode = 0
+offset_left = 6.9364014
+offset_top = -4.6511536
+offset_right = 796.5318
+offset_bottom = 64.34885
+text = "Time"
+label_settings = SubResource("LabelSettings_mg6lk")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://s8dv5d2664dd" path="res://Imports/Baren.png" id="6_48q88"]
 [ext_resource type="Texture2D" uid="uid://vqbl2huq2jox" path="res://Imports/Timebar.png" id="7_mg6lk"]
 [ext_resource type="Texture2D" uid="uid://clvqb3lqakeow" path="res://Imports/Timebarf.png" id="8_wunin"]
+[ext_resource type="Texture2D" uid="uid://cjyogqncm8ob7" path="res://Imports/sun.png" id="9_wunin"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_48q88"]
 font_size = 25
@@ -37,12 +38,70 @@ script = ExtResource("1_i1557")
 
 [node name="slide" type="HSlider" parent="." unique_id=410868617]
 layout_mode = 0
-offset_left = -203.0
-offset_top = 193.0
-offset_right = 70.0
-offset_bottom = 209.0
+offset_left = 589.0
+offset_top = -262.0
+offset_right = 862.0
+offset_bottom = -246.0
+rotation = 1.5707964
 
-[node name="healthbar" type="TextureProgressBar" parent="." unique_id=1280954205]
+[node name="Money" type="Label" parent="." unique_id=154267224]
+layout_mode = 0
+offset_left = -577.0
+offset_top = -286.0
+offset_right = -184.0
+offset_bottom = -247.0
+text = "  Money: 0"
+label_settings = SubResource("LabelSettings_48q88")
+
+[node name="Background" type="MeshInstance2D" parent="Money" unique_id=15292962]
+modulate = Color(1, 1, 1, 0.57254905)
+show_behind_parent = true
+position = Vector2(196.50002, 18.75)
+scale = Vector2(393.00003, 38.5)
+mesh = SubResource("QuadMesh_l4cvj")
+
+[node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
+layout_mode = 0
+offset_left = 309.0509
+offset_top = 278.97443
+offset_right = 1103.0509
+offset_bottom = 345.97443
+rotation = 3.1415927
+scale = Vector2(0.865, 0.645)
+texture_under = ExtResource("8_wunin")
+texture_progress = ExtResource("7_mg6lk")
+
+[node name="Title" type="Label" parent="Time" unique_id=1793391441]
+layout_mode = 0
+offset_left = 796.5907
+offset_top = 66.62695
+offset_right = 1591.9664
+offset_bottom = 135.62695
+rotation = 3.1415927
+text = "Time"
+label_settings = SubResource("LabelSettings_mg6lk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sun" type="TextureRect" parent="Time" unique_id=992431363]
+layout_mode = 0
+offset_top = -7.751939
+offset_right = 4000.0
+offset_bottom = 3992.248
+scale = Vector2(0.02, 0.02)
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(-0.5, 0)
+texture = ExtResource("9_wunin")
+
+[node name="Days" type="Timer" parent="." unique_id=389059064]
+wait_time = 400.0
+
+[node name="Bar" type="Control" parent="." unique_id=861658148]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="healthbar" type="TextureProgressBar" parent="Bar" unique_id=1280954205]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 130.0
@@ -54,7 +113,7 @@ fill_mode = 4
 texture_under = ExtResource("2_48q88")
 texture_progress = ExtResource("4_48q88")
 
-[node name="foodbar" type="TextureProgressBar" parent="." unique_id=1546377458]
+[node name="foodbar" type="TextureProgressBar" parent="Bar" unique_id=1546377458]
 layout_mode = 0
 offset_left = 383.0
 offset_top = 84.0
@@ -68,7 +127,7 @@ texture_under = ExtResource("4_qwshj")
 texture_progress = ExtResource("5_48q88")
 tint_under = Color(1, 1, 0, 1)
 
-[node name="energybar" type="TextureProgressBar" parent="." unique_id=453695260]
+[node name="energybar" type="TextureProgressBar" parent="Bar" unique_id=453695260]
 layout_mode = 0
 offset_left = 322.0
 offset_top = 26.0
@@ -79,40 +138,3 @@ value = 100.0
 fill_mode = 4
 texture_under = ExtResource("4_qwshj")
 texture_progress = ExtResource("6_48q88")
-
-[node name="Money" type="Label" parent="." unique_id=154267224]
-layout_mode = 0
-offset_left = -577.0
-offset_top = -286.0
-offset_right = -184.0
-offset_bottom = -236.0
-text = "  Money: 0"
-label_settings = SubResource("LabelSettings_48q88")
-
-[node name="Background" type="MeshInstance2D" parent="Money" unique_id=15292962]
-modulate = Color(1, 1, 1, 0.57254905)
-show_behind_parent = true
-position = Vector2(196.50002, 18.75)
-scale = Vector2(393.00003, 38.5)
-mesh = SubResource("QuadMesh_l4cvj")
-
-[node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
-layout_mode = 0
-offset_left = -373.0
-offset_top = 240.0
-offset_right = 421.0
-offset_bottom = 307.0
-scale = Vector2(0.865, 0.645)
-texture_under = ExtResource("7_mg6lk")
-texture_progress = ExtResource("8_wunin")
-
-[node name="Title" type="Label" parent="Time" unique_id=1793391441]
-layout_mode = 0
-offset_left = 6.9364014
-offset_top = -4.6511536
-offset_right = 796.5318
-offset_bottom = 64.34885
-text = "Time"
-label_settings = SubResource("LabelSettings_mg6lk")
-horizontal_alignment = 1
-vertical_alignment = 1

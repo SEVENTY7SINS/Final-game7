@@ -1,17 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://c871weodcwehg"]
+[gd_scene format=3 uid="uid://c871weodcwehg"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p2lkn"]
+[ext_resource type="Script" uid="uid://opubimkb4ijl" path="res://Scripts/Player.gd" id="1_p2lkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpvtv"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_e205l"]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="Gradient" id="Gradient_rpqav"]
+offsets = PackedFloat32Array(0, 0.7051282, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.5897436, 0.5897436, 0.5897436, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kry3j"]
+gradient = SubResource("Gradient_rpqav")
+fill_to = Vector2(1, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=727099382]
 script = ExtResource("1_p2lkn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921304118]
 shape = SubResource("CircleShape2D_mpvtv")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=508887870]
 scale = Vector2(20, 20)
 mesh = SubResource("SphereMesh_e205l")
+texture = SubResource("GradientTexture2D_kry3j")

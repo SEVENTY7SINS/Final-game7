@@ -4287,7 +4287,7 @@ sources/0 = SubResource("TileSetAtlasSource_lfstx")
 sources/1 = SubResource("TileSetAtlasSource_54pvs")
 pattern_0 = SubResource("TileMapPattern_4rrbq")
 
-[node name="Map2" type="Node2D" unique_id=407228348]
+[node name="Base2" type="Node2D" unique_id=407228348]
 
 [node name="Layer1" type="TileMapLayer" parent="." unique_id=1692620804]
 use_parent_material = true

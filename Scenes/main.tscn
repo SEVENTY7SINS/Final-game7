@@ -1,32 +1,31 @@
 [gd_scene format=3 uid="uid://dfylmgo2b7eyt"]
 
 [ext_resource type="Script" uid="uid://cjpmugku6ywwc" path="res://Scripts/Main.gd" id="1_ikw5u"]
-[ext_resource type="PackedScene" uid="uid://ck2atlnutbpoe" path="res://Scenes/UI.tscn" id="2_g14pn"]
-[ext_resource type="PackedScene" uid="uid://bmipco812hasf" path="res://Scenes/Map.tscn" id="2_jkjxm"]
-[ext_resource type="Script" uid="uid://blq0mxu5143ps" path="res://Scripts/Move.gd" id="3_1mvih"]
-[ext_resource type="PackedScene" uid="uid://ci7ybyqdlveet" path="res://Scenes/map_2.tscn" id="3_17ty6"]
+[ext_resource type="PackedScene" uid="uid://bmipco812hasf" path="res://Scenes/Base.tscn" id="3_6bp64"]
+[ext_resource type="PackedScene" uid="uid://ci7ybyqdlveet" path="res://Scenes/Base2.tscn" id="3_17ty6"]
 [ext_resource type="PackedScene" uid="uid://c871weodcwehg" path="res://Scenes/Player.tscn" id="3_yk6qs"]
+[ext_resource type="Script" uid="uid://c6krmso1md02f" path="res://Scripts/base.gd" id="4_6bp64"]
+[ext_resource type="PackedScene" uid="uid://do6clyo2hg314" path="res://Scenes/camera.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://c0l163jkhgoie" path="res://Scenes/map.scn" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=1579636280]
 script = ExtResource("1_ikw5u")
 
-[node name="MapOver" type="Node2D" parent="." unique_id=1402167368]
-position = Vector2(0, -2)
+[node name="Map" parent="." unique_id=1227182920 instance=ExtResource("7_6bp64")]
+position = Vector2(6650, 25)
+scale = Vector2(5, 5)
 
-[node name="Map" parent="MapOver" unique_id=1420773150 instance=ExtResource("2_jkjxm")]
+[node name="Base" parent="." unique_id=1420773150 instance=ExtResource("3_6bp64")]
+position = Vector2(0.00048828125, -1.9999981)
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("4_6bp64")
 
-[node name="Playmove" type="Node2D" parent="." unique_id=688044271]
-position = Vector2(4485, 3594)
-script = ExtResource("3_1mvih")
+[node name="Base2" parent="." unique_id=336310563 instance=ExtResource("3_17ty6")]
+position = Vector2(0.00048828125, 0)
+scale = Vector2(0.99999994, 0.99999994)
 
-[node name="Player" parent="Playmove" unique_id=955123904 instance=ExtResource("3_yk6qs")]
-collision_layer = 255
+[node name="Player" parent="." unique_id=727099382 instance=ExtResource("3_yk6qs")]
+position = Vector2(8456, 4568)
 
-[node name="Camera" type="Camera2D" parent="Playmove" unique_id=406895538]
-z_index = 20
-process_callback = 0
-
-[node name="Control" parent="Playmove/Camera" unique_id=307886317 instance=ExtResource("2_g14pn")]
-
-[node name="Map2" parent="." unique_id=336310563 instance=ExtResource("3_17ty6")]
-position = Vector2(0, -2)
+[node name="Camera" parent="Player" unique_id=1490486809 instance=ExtResource("6_21xkr")]
+script = null

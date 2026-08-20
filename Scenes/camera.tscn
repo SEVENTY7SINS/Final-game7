@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://do6clyo2hg314"]
+
+[ext_resource type="Script" uid="uid://g5gs2mcvqdsf" path="res://Scripts/camera.gd" id="1_f1cf7"]
+[ext_resource type="PackedScene" uid="uid://ck2atlnutbpoe" path="res://Scenes/UI.tscn" id="2_mhsga"]
+
+[node name="Camera" type="Camera2D" unique_id=1490486809]
+z_index = 20
+process_callback = 0
+script = ExtResource("1_f1cf7")
+
+[node name="Control" parent="." unique_id=401027565 instance=ExtResource("2_mhsga")]

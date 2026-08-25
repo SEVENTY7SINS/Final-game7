@@ -1,18 +1,39 @@
 extends Camera2D
 
-@export var map_left = 7250
-@export var map_right = 19800
-@export var map_top = 300
-@export var map_bottom = 6350
-
-@export var follow_speed = 5.0
-
+@export var player: CharacterBody2D
+var map = false
+var base = true
 
 func _ready():
-	limit_left = map_left
-	limit_right = map_right
-	limit_top = map_top
-	limit_bottom = map_bottom
-	
-	position_smoothing_enabled = true
-	position_smoothing_speed = follow_speed
+	enabled = true
+	update_camera_limits()
+
+func _process(delta):
+	if player:
+		global_position = player.global_position
+
+func update_camera_limits():
+	if base:
+		limit_left = 0
+		limit_right = 6560
+		limit_top = 0
+		limit_bottom = 4158
+
+	elif map:
+		limit_left = 6650
+		limit_right = 20400
+		limit_top = 0
+		limit_bottom = 6650
+
+func _on_portal_b_body_entered(body: Node2D) -> void:
+	if body == player:
+		map = true
+		base = false
+		update_camera_limits()
+
+
+func _on_portal_m_body_entered(body: Node2D) -> void:
+	if body == player:
+		map = false
+		base = true
+		update_camera_limits()

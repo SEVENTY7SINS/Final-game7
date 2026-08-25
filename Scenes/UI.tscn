@@ -25,19 +25,10 @@ font_color = Color(0.012617188, 0, 0, 0)
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" unique_id=401027565]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Control" type="CanvasLayer" unique_id=1382397568]
 script = ExtResource("1_i1557")
 
 [node name="slide" type="HSlider" parent="." unique_id=410868617]
-layout_mode = 0
 offset_left = 589.0
 offset_top = -262.0
 offset_right = 862.0
@@ -45,7 +36,6 @@ offset_bottom = -246.0
 rotation = 1.5707964
 
 [node name="Money" type="Label" parent="." unique_id=154267224]
-layout_mode = 0
 offset_left = -577.0
 offset_top = -286.0
 offset_right = -184.0
@@ -61,7 +51,6 @@ scale = Vector2(393.00003, 38.5)
 mesh = SubResource("QuadMesh_l4cvj")
 
 [node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
-layout_mode = 0
 offset_left = 309.0509
 offset_top = 278.97443
 offset_right = 1103.0509
@@ -94,12 +83,11 @@ offset_transform_position_ratio = Vector2(-0.5, 0)
 texture = ExtResource("9_wunin")
 
 [node name="Days" type="Timer" parent="." unique_id=389059064]
-wait_time = 400.0
+wait_time = 14.0
 
 [node name="Bar" type="Control" parent="." unique_id=861658148]
+layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="healthbar" type="TextureProgressBar" parent="Bar" unique_id=1280954205]
 layout_mode = 0
@@ -138,3 +126,5 @@ value = 100.0
 fill_mode = 4
 texture_under = ExtResource("4_qwshj")
 texture_progress = ExtResource("6_48q88")
+
+[connection signal="timeout" from="Days" to="." method="_on_days_timeout"]

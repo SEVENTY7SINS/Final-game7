@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var speed = 300
 @export var sprint_speed = 3000
 
+@onready var Mapportal = $"../Map/MapPort"
+@onready var Baseportal = $"../Base/BasePort"
+
+
 var timer = 2.0
 var runtimer = 3.0
 var running = true
@@ -23,16 +27,14 @@ func _physics_process(delta):
 
 func sprint(delta):
 	if Input.is_action_pressed("Shift") and running:
-		timer -= delta
+		pass
 
-		if timer <= 0:
-			timer = 0
-			running = false
 
-	elif not Input.is_action_pressed("Shift") and timer < 2.0:
-		runtimer -= delta
+func _on_portal_b_body_entered(body: Node2D) -> void:
+	if body == self:
+		global_position = Mapportal.global_position
 
-		if runtimer <= 0:
-			timer = 2.0
-			runtimer = 3.0
-			running = true
+
+func _on_portal_m_body_entered(body: Node2D) -> void:
+	if body == self:
+		global_position = Baseportal.global_position

@@ -7,10 +7,9 @@ extends CharacterBody2D
 @onready var Baseportal = $"../Base/BasePort"
 @onready var UI = $Control
 @onready var energybar = $Control/Bar/energybar
+@onready var store = $Store
 
 var running = true
-var maxenergy
-var minenergy
 
 func _ready() -> void:
 	pass
@@ -19,20 +18,17 @@ func _physics_process(delta):
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 
 	sprint(delta)
-	if running and Input.is_action_pressed("Shift"):
+
+	if running and Input.is_action_pressed("Shift") and energybar.value > 0:
 		velocity = direction * sprint_speed
 	else:
 		velocity = direction * speed
+	
 	move_and_slide()
-	
-	maxenergy = energybar.max_value
-	minenergy = (energybar.max_value/3)*4
-	
-	print(energybar.value)
 
 func sprint(delta):
-	if Input.is_action_pressed("Shift") and running and energybar.value >= minenergy:
-		running = true
+	if energybar.value <= 0:
+		running = false
 	else:
 		running = true
 

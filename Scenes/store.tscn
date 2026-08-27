@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://5yvhaoxb06s5"]
+
+[ext_resource type="Script" uid="uid://w6bn1gxptvf1" path="res://Scripts/store.gd" id="1_c3i85"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4cvj"]
+size = Vector3(800, 400, 1)
+
+[node name="Store" type="CanvasLayer" unique_id=1123631887]
+script = ExtResource("1_c3i85")
+
+[node name="Background" type="MeshInstance2D" parent="." unique_id=1073791725]
+modulate = Color(0.76, 0.35466668, 0, 1)
+position = Vector2(600, 300)
+mesh = SubResource("BoxMesh_l4cvj")
+
+[node name="theon" type="Button" parent="." unique_id=849584403]
+offset_left = 409.0
+offset_top = 252.0
+offset_right = 784.0
+offset_bottom = 353.0
+text = "Lose 10$?"

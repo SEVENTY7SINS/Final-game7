@@ -34,8 +34,7 @@ func _process(delta: float) -> void:
 	energy_drain(delta)
 	energy_regen(delta)
 
-	if Input.is_action_just_pressed("1"):
-		chick += 1
+	chick += 1
 
 	Timebar.value = Days.time_left
 
@@ -97,3 +96,10 @@ func energy_hit():
 
 func _on_days_timeout() -> void:
 	dayson += 1
+
+func receive_value(value):
+	print("Received: ", value)
+	if chick > value:
+		chick -= value
+	else:
+		print("poor ass")

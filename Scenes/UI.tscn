@@ -51,10 +51,10 @@ scale = Vector2(393.00003, 38.5)
 mesh = SubResource("QuadMesh_l4cvj")
 
 [node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
-offset_left = 309.0509
-offset_top = 278.97443
-offset_right = 1103.0509
-offset_bottom = 345.97443
+offset_left = 284.00003
+offset_top = 281.0
+offset_right = 1078.0
+offset_bottom = 348.0
 rotation = 3.1415927
 scale = Vector2(0.865, 0.645)
 texture_under = ExtResource("8_wunin")
@@ -88,43 +88,46 @@ wait_time = 14.0
 [node name="Bar" type="Control" parent="." unique_id=861658148]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(-1, 1)
 
 [node name="healthbar" type="TextureProgressBar" parent="Bar" unique_id=1280954205]
 layout_mode = 0
-offset_left = 430.0
-offset_top = 130.0
-offset_right = 808.0
-offset_bottom = 508.0
+offset_left = -406.00006
+offset_top = 132.0
+offset_right = -28.000061
+offset_bottom = 510.0
+rotation = 1.5707964
 scale = Vector2(0.865, 0.865)
 value = 100.0
-fill_mode = 4
+fill_mode = 5
 texture_under = ExtResource("2_48q88")
 texture_progress = ExtResource("4_48q88")
 
+[node name="energybar" type="TextureProgressBar" parent="Bar" unique_id=453695260]
+layout_mode = 0
+offset_left = -300.0
+offset_top = 26.0
+offset_right = 38.000122
+offset_bottom = 364.0
+rotation = 1.5707964
+scale = Vector2(1.6, 1.6)
+value = 100.0
+fill_mode = 5
+texture_under = ExtResource("4_qwshj")
+texture_progress = ExtResource("6_48q88")
+
 [node name="foodbar" type="TextureProgressBar" parent="Bar" unique_id=1546377458]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 84.0
-offset_right = 721.0
-offset_bottom = 422.0
-rotation = -6.2831855
+offset_left = -359.00003
+offset_top = 85.0
+offset_right = -21.00003
+offset_bottom = 423.0
+rotation = 1.5707964
 scale = Vector2(1.245, 1.245)
 value = 100.0
-fill_mode = 4
+fill_mode = 5
 texture_under = ExtResource("4_qwshj")
 texture_progress = ExtResource("5_48q88")
 tint_under = Color(1, 1, 0, 1)
-
-[node name="energybar" type="TextureProgressBar" parent="Bar" unique_id=453695260]
-layout_mode = 0
-offset_left = 322.0
-offset_top = 26.0
-offset_right = 660.0001
-offset_bottom = 364.0
-scale = Vector2(1.6, 1.6)
-value = 100.0
-fill_mode = 4
-texture_under = ExtResource("4_qwshj")
-texture_progress = ExtResource("6_48q88")
 
 [connection signal="timeout" from="Days" to="." method="_on_days_timeout"]

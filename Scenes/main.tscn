@@ -95,13 +95,16 @@ scale = Vector2(5, 5)
 anchor_mode = 1
 player = NodePath("..")
 
+[node name="Control" parent="Player" unique_id=1382397568 instance=ExtResource("2_g14pn")]
+offset = Vector2(575.175, 300)
+transform = Transform2D(1, 0, 0, 1, 575.175, 300)
+
 [node name="Base2" parent="." unique_id=336310563 instance=ExtResource("3_17ty6")]
 position = Vector2(0.00048828125, 0)
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="Control" parent="." unique_id=1382397568 instance=ExtResource("2_g14pn")]
-offset = Vector2(575.175, 300)
-transform = Transform2D(1, 0, 0, 1, 575.175, 300)
+[node name="Spawn" type="Node2D" parent="." unique_id=1709488330]
+position = Vector2(13663, 3071)
 
 [connection signal="body_entered" from="Map/Portal/PortalM" to="Player" method="_on_portal_m_body_entered"]
 [connection signal="body_entered" from="Map/Portal/PortalM" to="Player/Camera" method="_on_portal_m_body_entered"]

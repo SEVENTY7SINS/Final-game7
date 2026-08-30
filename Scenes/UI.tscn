@@ -92,9 +92,9 @@ scale = Vector2(-1, 1)
 
 [node name="healthbar" type="TextureProgressBar" parent="Bar" unique_id=1280954205]
 layout_mode = 0
-offset_left = -406.00006
+offset_left = -439.0
 offset_top = 132.0
-offset_right = -28.000061
+offset_right = -61.0
 offset_bottom = 510.0
 rotation = 1.5707964
 scale = Vector2(0.865, 0.865)
@@ -105,9 +105,9 @@ texture_progress = ExtResource("4_48q88")
 
 [node name="energybar" type="TextureProgressBar" parent="Bar" unique_id=453695260]
 layout_mode = 0
-offset_left = -300.0
+offset_left = -330.0
 offset_top = 26.0
-offset_right = 38.000122
+offset_right = 8.000122
 offset_bottom = 364.0
 rotation = 1.5707964
 scale = Vector2(1.6, 1.6)
@@ -118,9 +118,9 @@ texture_progress = ExtResource("6_48q88")
 
 [node name="foodbar" type="TextureProgressBar" parent="Bar" unique_id=1546377458]
 layout_mode = 0
-offset_left = -359.00003
+offset_left = -390.0
 offset_top = 85.0
-offset_right = -21.00003
+offset_right = -52.0
 offset_bottom = 423.0
 rotation = 1.5707964
 scale = Vector2(1.245, 1.245)

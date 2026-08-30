@@ -5,9 +5,11 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_afpow"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4cvj"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=524300284]
+[node name="Enemy" type="CharacterBody2D" unique_id=524300284]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1f0kj")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1703547286]
@@ -15,5 +17,14 @@ scale = Vector2(20, 20)
 mesh = SubResource("SphereMesh_afpow")
 texture = ExtResource("1_hghv2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=599041512]
-shape = SubResource("CircleShape2D_1f0kj")
+[node name="Area2D" type="Area2D" parent="." unique_id=1157282574]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1630081899]
+shape = SubResource("CircleShape2D_l4cvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=585832271]
+shape = SubResource("CircleShape2D_l4cvj")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

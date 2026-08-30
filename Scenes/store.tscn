@@ -14,8 +14,8 @@ position = Vector2(600, 300)
 mesh = SubResource("BoxMesh_l4cvj")
 
 [node name="theon" type="Button" parent="." unique_id=849584403]
-offset_left = 409.0
-offset_top = 252.0
-offset_right = 784.0
-offset_bottom = 353.0
+offset_left = 225.0
+offset_top = 120.0
+offset_right = 412.0
+offset_bottom = 208.0
 text = "Lose 10$?"

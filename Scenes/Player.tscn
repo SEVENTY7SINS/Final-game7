@@ -19,6 +19,7 @@ script = ExtResource("1_p2lkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921304118]
 shape = SubResource("CircleShape2D_mpvtv")
+debug_color = Color(0.95640117, 0, 0.540705, 0.41960785)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=508887870]
 scale = Vector2(20, 20)

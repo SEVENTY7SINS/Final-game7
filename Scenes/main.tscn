@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://do6clyo2hg314" path="res://Scenes/camera.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c0l163jkhgoie" path="res://Scenes/map.scn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://5yvhaoxb06s5" path="res://Scenes/store.tscn" id="11_6iyac"]
+[ext_resource type="Script" uid="uid://2tt6mr7f6r7a" path="res://Scripts/spawn.gd" id="13_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://cq6krs427twsi" path="res://Scenes/enemy.tscn" id="14_wsu2k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6pf3"]
 shader = ExtResource("3_d1ilt")
@@ -89,7 +91,7 @@ scale = Vector2(8.693953, 8.693953)
 texture = ExtResource("4_hptm8")
 
 [node name="Player" parent="." unique_id=727099382 instance=ExtResource("3_yk6qs")]
-position = Vector2(4682, 2608)
+position = Vector2(4706.0005, 3715)
 scale = Vector2(5, 5)
 
 [node name="Camera" parent="Player" unique_id=1490486809 node_paths=PackedStringArray("player") instance=ExtResource("6_21xkr")]
@@ -101,13 +103,16 @@ offset = Vector2(575.175, 300)
 transform = Transform2D(1, 0, 0, 1, 575.175, 300)
 
 [node name="Store" parent="Player" unique_id=1123631887 instance=ExtResource("11_6iyac")]
+visible = false
 
 [node name="Base2" parent="." unique_id=336310563 instance=ExtResource("3_17ty6")]
 position = Vector2(0.00048828125, 0)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Spawn" type="Node2D" parent="." unique_id=1709488330]
-position = Vector2(13663, 3071)
+position = Vector2(17772, 1183)
+script = ExtResource("13_jkdf5")
+enemy_scene = ExtResource("14_wsu2k")
 
 [connection signal="body_entered" from="Map/Portal/PortalM" to="Player" method="_on_portal_m_body_entered"]
 [connection signal="body_entered" from="Map/Portal/PortalM" to="Player/Camera" method="_on_portal_m_body_entered"]

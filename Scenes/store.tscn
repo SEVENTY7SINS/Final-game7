@@ -9,6 +9,7 @@ size = Vector3(800, 400, 1)
 script = ExtResource("1_c3i85")
 
 [node name="Background" type="MeshInstance2D" parent="." unique_id=1073791725]
+visible = false
 modulate = Color(0.76, 0.35466668, 0, 1)
 position = Vector2(600, 300)
 mesh = SubResource("BoxMesh_l4cvj")

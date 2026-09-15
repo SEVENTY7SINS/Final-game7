@@ -43,11 +43,12 @@ scale = Vector2(5, 5)
 [node name="Portal" type="Sprite2D" parent="Map" unique_id=532045803]
 z_index = 1
 material = SubResource("ShaderMaterial_e6pf3")
-position = Vector2(2494.2495, 227.15001)
+position = Vector2(2600, 1200)
 scale = Vector2(3.9531152, 3.9531152)
 texture = ExtResource("5_ynf5e")
 
 [node name="PortalM" type="Area2D" parent="Map/Portal" unique_id=214421586]
+visible = false
 z_index = 14
 position = Vector2(1284.3809, -219.86813)
 scale = Vector2(1.9108809, 1.9108809)
@@ -60,7 +61,7 @@ shape = SubResource("CircleShape2D_l4cvj")
 
 [node name="MapPort" type="Sprite2D" parent="Map" unique_id=1007848723]
 material = SubResource("ShaderMaterial_hx2dm")
-position = Vector2(2339.4004, 228.20001)
+position = Vector2(160, 160)
 scale = Vector2(3.6093724, 3.6093724)
 texture = SubResource("CompressedTexture2D_hptm8")
 
@@ -95,6 +96,7 @@ position = Vector2(4706.0005, 3715)
 scale = Vector2(5, 5)
 
 [node name="Camera" parent="Player" unique_id=1490486809 node_paths=PackedStringArray("player") instance=ExtResource("6_21xkr")]
+position = Vector2(-818.4, 148.19983)
 anchor_mode = 1
 player = NodePath("..")
 
@@ -103,7 +105,6 @@ offset = Vector2(575.175, 300)
 transform = Transform2D(1, 0, 0, 1, 575.175, 300)
 
 [node name="Store" parent="Player" unique_id=1123631887 instance=ExtResource("11_6iyac")]
-visible = false
 
 [node name="Base2" parent="." unique_id=336310563 instance=ExtResource("3_17ty6")]
 position = Vector2(0.00048828125, 0)

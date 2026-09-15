@@ -39,3 +39,7 @@ func _on_portal_b_body_entered(body: Node2D) -> void:
 func _on_portal_m_body_entered(body: Node2D) -> void:
 	if body == self:
 		global_position = Baseportal.global_position
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

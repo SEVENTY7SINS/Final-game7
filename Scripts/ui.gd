@@ -55,6 +55,9 @@ func energy_drain(delta):
 	if Input.is_action_pressed("Shift"):
 		energy -= 10.0 * delta
 		healing_speed = 0.0
+		
+	if Input.is_action_pressed("Space"):
+		healing_speed = 0.0
 
 	energy = clamp(energy, 0, energybar.max_value / 4.0)
 	energybar.value = energy

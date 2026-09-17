@@ -48,7 +48,6 @@ scale = Vector2(3.9531152, 3.9531152)
 texture = ExtResource("5_ynf5e")
 
 [node name="PortalM" type="Area2D" parent="Map/Portal" unique_id=214421586]
-visible = false
 z_index = 14
 position = Vector2(1284.3809, -219.86813)
 scale = Vector2(1.9108809, 1.9108809)
@@ -66,6 +65,7 @@ scale = Vector2(3.6093724, 3.6093724)
 texture = SubResource("CompressedTexture2D_hptm8")
 
 [node name="Base" parent="." unique_id=1420773150 instance=ExtResource("3_6bp64")]
+visible = false
 position = Vector2(2.910383e-11, -1.1920929e-07)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("4_6bp64")

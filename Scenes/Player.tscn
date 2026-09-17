@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://opubimkb4ijl" path="res://Scripts/Player.gd" id="1_p2lkn"]
 [ext_resource type="Texture2D" uid="uid://d0hlr8ep26ce" path="res://Imports/Act/Actions.png" id="2_kyqiw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mpvtv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
+size = Vector2(14, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
 atlas = ExtResource("2_kyqiw")
@@ -12,6 +13,22 @@ region = Rect2(160, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
 atlas = ExtResource("2_kyqiw")
 region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glx4g"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miouo"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(192, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lslt6"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(208, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
 atlas = ExtResource("2_kyqiw")
@@ -25,6 +42,22 @@ region = Rect2(160, 48, 16, 16)
 atlas = ExtResource("2_kyqiw")
 region = Rect2(176, 48, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3h8g"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e7my"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arntx"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(192, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v66d"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(208, 112, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
 atlas = ExtResource("2_kyqiw")
 region = Rect2(160, 16, 16, 16)
@@ -33,6 +66,22 @@ region = Rect2(160, 16, 16, 16)
 atlas = ExtResource("2_kyqiw")
 region = Rect2(176, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulo2v"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iu4k"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0x7a"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(192, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70hv0"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(208, 80, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yoq75"]
 atlas = ExtResource("2_kyqiw")
 region = Rect2(160, 0, 16, 16)
@@ -40,6 +89,22 @@ region = Rect2(160, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksbbd"]
 atlas = ExtResource("2_kyqiw")
 region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x63xi"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2e8t"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qidb7"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(192, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8flut"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(208, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l4cvj"]
 animations = [{
@@ -52,6 +117,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyqiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glx4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_miouo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lslt6")
+}],
+"loop": 0,
+"name": &"Downs",
 "speed": 5.0
 }, {
 "frames": [{
@@ -75,6 +157,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_o3h8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e7my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arntx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v66d")
+}],
+"loop": 0,
+"name": &"Lefts",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bhhdu")
 }, {
 "duration": 1.0,
@@ -82,6 +181,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulo2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iu4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0x7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70hv0")
+}],
+"loop": 0,
+"name": &"Rights",
 "speed": 5.0
 }, {
 "frames": [{
@@ -94,17 +210,39 @@ animations = [{
 "loop": 1,
 "name": &"Up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x63xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2e8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qidb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8flut")
+}],
+"loop": 0,
+"name": &"Ups",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=727099382]
 script = ExtResource("1_p2lkn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=921304118]
-shape = SubResource("CircleShape2D_mpvtv")
+[node name="Attack" type="CollisionShape2D" parent="." unique_id=921304118]
+shape = SubResource("RectangleShape2D_kyqiw")
 debug_color = Color(0.95640117, 0, 0.540705, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1188424958]
+[node name="Defend" type="Area2D" parent="." unique_id=1187430171]
+
+[node name="Defend" type="CollisionShape2D" parent="Defend" unique_id=236346000]
+shape = SubResource("RectangleShape2D_kyqiw")
+debug_color = Color(0.95640117, 0, 0.540705, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1188424958]
 scale = Vector2(0.93, 0.93)
 sprite_frames = SubResource("SpriteFrames_l4cvj")
-animation = &"Down"
-frame_progress = 0.3018323
+animation = &"Downs"

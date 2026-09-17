@@ -19,14 +19,14 @@ scale = Vector2(20, 20)
 mesh = SubResource("SphereMesh_afpow")
 texture = ExtResource("1_hghv2")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1157282574]
+[node name="Defence" type="Area2D" parent="." unique_id=1157282574]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1630081899]
+[node name="Defence" type="CollisionShape2D" parent="Defence" unique_id=1630081899]
 shape = SubResource("CircleShape2D_l4cvj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=585832271]
+[node name="Attack" type="CollisionShape2D" parent="." unique_id=585832271]
 shape = SubResource("CircleShape2D_l4cvj")
 
 [node name="Health" type="TextureProgressBar" parent="." unique_id=1164567719]
@@ -39,4 +39,4 @@ value = 100.0
 texture_under = ExtResource("3_287tu")
 texture_progress = ExtResource("4_0830c")
 
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_entered" from="Defence" to="." method="_on_area_2d_body_shape_entered"]

@@ -1,18 +1,100 @@
 [gd_scene format=3 uid="uid://c871weodcwehg"]
 
 [ext_resource type="Script" uid="uid://opubimkb4ijl" path="res://Scripts/Player.gd" id="1_p2lkn"]
+[ext_resource type="Texture2D" uid="uid://d0hlr8ep26ce" path="res://Imports/Act/Actions.png" id="2_kyqiw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpvtv"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_e205l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 32, 16, 16)
 
-[sub_resource type="Gradient" id="Gradient_rpqav"]
-offsets = PackedFloat32Array(0, 0.7051282, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.5897436, 0.5897436, 0.5897436, 1, 1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 32, 16, 16)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kry3j"]
-gradient = SubResource("Gradient_rpqav")
-fill_to = Vector2(1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn08x"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ee3"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megsn"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoq75"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksbbd"]
+atlas = ExtResource("2_kyqiw")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4cvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}],
+"loop": 1,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn08x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52ee3")
+}],
+"loop": 1,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhhdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megsn")
+}],
+"loop": 1,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoq75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksbbd")
+}],
+"loop": 1,
+"name": &"Up",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=727099382]
 script = ExtResource("1_p2lkn")
@@ -21,7 +103,8 @@ script = ExtResource("1_p2lkn")
 shape = SubResource("CircleShape2D_mpvtv")
 debug_color = Color(0.95640117, 0, 0.540705, 0.41960785)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=508887870]
-scale = Vector2(20, 20)
-mesh = SubResource("SphereMesh_e205l")
-texture = SubResource("GradientTexture2D_kry3j")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=1188424958]
+scale = Vector2(0.93, 0.93)
+sprite_frames = SubResource("SpriteFrames_l4cvj")
+animation = &"Down"
+frame_progress = 0.3018323

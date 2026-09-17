@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0wrfmors26s"
-path="res://.godot/imported/Pause.png-b01566d3b553c2e66d350bce34f3a3ce.ctex"
+uid="uid://c4kjik81bpk3m"
+path="res://.godot/imported/arrow_ice.png-b2ca7362c97d86c491f33e532a725e46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imports/Pause.png"
-dest_files=["res://.godot/imported/Pause.png-b01566d3b553c2e66d350bce34f3a3ce.ctex"]
+source_file="res://Imports/Act/arrow_ice.png"
+dest_files=["res://.godot/imported/arrow_ice.png-b2ca7362c97d86c491f33e532a725e46.ctex"]
 
 [params]
 

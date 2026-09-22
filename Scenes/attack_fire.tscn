@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d4hfi3g1cjvcj"]
+
+[ext_resource type="Script" uid="uid://cg8vobbi4efau" path="res://Scripts/attack_fire.gd" id="1_6ncg3"]
+[ext_resource type="Texture2D" uid="uid://ctscalt173w1r" path="res://Imports/PlanetClickerAssets/firetex0.png" id="1_v1btl"]
+
+[node name="attack_fire" type="Node2D" unique_id=731817499]
+script = ExtResource("1_6ncg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1025876512]
+texture = ExtResource("1_v1btl")

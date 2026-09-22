@@ -29,17 +29,17 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_i1557")
 
 [node name="slide" type="HSlider" parent="." unique_id=410868617]
-offset_left = 589.0
-offset_top = -262.0
-offset_right = 862.0
-offset_bottom = -246.0
+offset_left = 1175.0
+offset_top = 31.0
+offset_right = 1448.0
+offset_bottom = 47.0
 rotation = 1.5707964
 
 [node name="Money" type="Label" parent="." unique_id=154267224]
-offset_left = -577.0
-offset_top = -286.0
-offset_right = -184.0
-offset_bottom = -247.0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 402.0
+offset_bottom = 46.0
 text = "  Money: 0"
 label_settings = SubResource("LabelSettings_48q88")
 
@@ -51,10 +51,10 @@ scale = Vector2(393.00003, 38.5)
 mesh = SubResource("QuadMesh_l4cvj")
 
 [node name="Time" type="TextureProgressBar" parent="." unique_id=1635739652]
-offset_left = 284.00003
-offset_top = 281.0
-offset_right = 1078.0
-offset_bottom = 348.0
+offset_left = 870.0
+offset_top = 574.0
+offset_right = 1664.0
+offset_bottom = 641.0
 rotation = 3.1415927
 scale = Vector2(0.865, 0.645)
 texture_under = ExtResource("8_wunin")
@@ -88,6 +88,10 @@ wait_time = 14.0
 [node name="Bar" type="Control" parent="." unique_id=861658148]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 586.0
+offset_top = 293.0
+offset_right = 586.0
+offset_bottom = 293.0
 scale = Vector2(-1, 1)
 
 [node name="energybar" type="TextureProgressBar" parent="Bar" unique_id=453695260]

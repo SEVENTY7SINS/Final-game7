@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2ludkfe23tim"]
+
+[ext_resource type="Script" uid="uid://dqrgwcsf4570b" path="res://Scripts/attack_earth.gd" id="1_5ydbq"]
+[ext_resource type="Texture2D" uid="uid://cvul0la2nanau" path="res://Imports/PlanetClickerAssets/earthtex0.png" id="1_my02s"]
+
+[node name="attack_earth" type="Node2D" unique_id=1679274205]
+script = ExtResource("1_5ydbq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523045240]
+texture = ExtResource("1_my02s")

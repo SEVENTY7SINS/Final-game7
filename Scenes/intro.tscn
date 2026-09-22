@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://ban4nwrxalqrk"]
+[gd_scene load_steps=2 format=3 uid="uid://ban4nwrxalqrk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_l4cvj"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1646153292]
+[node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Background" type="MeshInstance2D" parent="." unique_id=1439721024]
-modulate = Color(1, 1, 1, 0.09803922)
+[node name="Background" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.0980392)
 position = Vector2(600, 300)
 scale = Vector2(1000, 500)
 mesh = SubResource("BoxMesh_l4cvj")

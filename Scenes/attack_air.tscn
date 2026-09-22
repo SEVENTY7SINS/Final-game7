@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d3cw5m4fg23qc"]
+
+[ext_resource type="Script" uid="uid://ci77nsxmd4seq" path="res://Scripts/attacking_air.gd" id="1_7rxg3"]
+[ext_resource type="Texture2D" uid="uid://cisvkwsv2ihqs" path="res://Imports/PlanetClickerAssets/airtex0.png" id="2_2abtk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4cvj"]
+radius = 17.0
+
+[node name="attack_air" type="Node2D" unique_id=56859203]
+script = ExtResource("1_7rxg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765178368]
+texture = ExtResource("2_2abtk")
+
+[node name="air" type="Area2D" parent="." unique_id=1718148460]
+
+[node name="air" type="CollisionShape2D" parent="air" unique_id=1189495952]
+shape = SubResource("CircleShape2D_l4cvj")

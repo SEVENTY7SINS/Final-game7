@@ -2,34 +2,42 @@
 
 [ext_resource type="Script" uid="uid://c6cvn38rv4iaa" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://cjyogqncm8ob7" path="res://Imports/sun.png" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://d3cw5m4fg23qc" path="res://Scenes/attack_air.tscn" id="2_auwsv"]
+[ext_resource type="PackedScene" uid="uid://d2ludkfe23tim" path="res://Scenes/attack_earth.tscn" id="3_8uf12"]
 [ext_resource type="Texture2D" uid="uid://crtbj6hqojvph" path="res://Imports/Eebar.png" id="3_287tu"]
 [ext_resource type="Texture2D" uid="uid://i2u2yy3yxfs3" path="res://Imports/Efbar.png" id="4_0830c"]
+[ext_resource type="PackedScene" uid="uid://d4hfi3g1cjvcj" path="res://Scenes/attack_fire.tscn" id="4_po0sg"]
+[ext_resource type="PackedScene" uid="uid://op114fmhiduu" path="res://Scenes/attack_water.tscn" id="5_haro7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_afpow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l4cvj"]
 
-[node name="Enemy" type="CharacterBody2D" unique_id=524300284]
+[node name="Enemy" type="CharacterBody2D" unique_id=895306497]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_1f0kj")
+attack_scene1 = ExtResource("2_auwsv")
+attack_scene2 = ExtResource("3_8uf12")
+attack_scene3 = ExtResource("4_po0sg")
+attack_scene4 = ExtResource("5_haro7")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1703547286]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1981123130]
 scale = Vector2(20, 20)
 mesh = SubResource("SphereMesh_afpow")
 texture = ExtResource("1_hghv2")
 
-[node name="Defence" type="Area2D" parent="." unique_id=1157282574]
+[node name="Defence" type="Area2D" parent="." unique_id=684993004]
 collision_layer = 3
 collision_mask = 3
 
-[node name="Defence" type="CollisionShape2D" parent="Defence" unique_id=1630081899]
+[node name="Defence" type="CollisionShape2D" parent="Defence" unique_id=1530435752]
 shape = SubResource("CircleShape2D_l4cvj")
 
-[node name="Attack" type="CollisionShape2D" parent="." unique_id=585832271]
+[node name="Attack" type="CollisionShape2D" parent="." unique_id=1051670107]
 shape = SubResource("CircleShape2D_l4cvj")
 
-[node name="Health" type="TextureProgressBar" parent="." unique_id=1164567719]
+[node name="Health" type="TextureProgressBar" parent="." unique_id=828228402]
 offset_left = -12.0
 offset_top = -11.0
 offset_right = 782.0
@@ -39,4 +47,4 @@ value = 100.0
 texture_under = ExtResource("3_287tu")
 texture_progress = ExtResource("4_0830c")
 
-[connection signal="body_shape_entered" from="Defence" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="area_shape_entered" from="Defence" to="." method="_on_defence_area_shape_entered"]
